@@ -227,24 +227,29 @@ const calculate = () => {
   */
   const currentValue = parseFloat(currentInput.value);
 
-  switch (operator.value) {
-    case '+':
-      currentInput.value = (previousValue.value + currentValue).toString();
-      break;
-    case '-':
-      currentInput.value = (previousValue.value - currentValue).toString();
-      break;
-    case 'x':
-      currentInput.value = (previousValue.value * currentValue).toString();
-      break;
-    case '÷':
-      currentInput.value = (previousValue.value / currentValue).toString();
-      break;
+  // only perform calculation if there is a previous and current value
+  if (currentValue && previousValue.value) {
+    switch (operator.value) {
+      case '+':
+        currentInput.value = (previousValue.value + currentValue).toString();
+        break;
+      case '-':
+        currentInput.value = (previousValue.value - currentValue).toString();
+        break;
+      case 'x':
+        currentInput.value = (previousValue.value * currentValue).toString();
+        break;
+      case '÷':
+        currentInput.value = (previousValue.value / currentValue).toString();
+        break;
+      default:
+        break;
+    }
   }
-
   operator.value = '';
   previousValue.value = 0;
   updateDisplay();
+
 }
 
 const handleReset = () => {
@@ -413,6 +418,6 @@ const handleDelete = () => {
 .app-container {
   height: 100vh;
   display: flex;
-  padding-top: 3rem;
+  padding: 2rem 0;
 }
 </style> 
