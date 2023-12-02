@@ -418,6 +418,7 @@ const handleDelete = () => {
 
 .app-container {
   height: 100vh;
+  max-height: 100vh;
   display: flex;
   padding: 2rem 0;
 }
