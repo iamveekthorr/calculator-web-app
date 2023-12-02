@@ -388,7 +388,8 @@ const handleDelete = () => {
   background-color: #213547;
   color: hsl(0, 0%, 100%);
   height: 8rem;
-  padding: 1rem;
+  padding: 1rem 2rem;
+  font-size: 2.4rem;
 }
 
 .text-transform-uppercase {
